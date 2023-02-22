@@ -20,3 +20,38 @@ In the current state of the nation, by using revolutionary services such as cred
 
 In this proposed project we designed a protocol or a model to detect the fraud activity in credit card transactions. This system is capable of providing most of the essential features required to detect fraudulent and legitimate transactions.
 As technology changes, it becomes difficult to track the behaviour and pattern of fraudulent transactions. With the upsurge of artificial intelligence and other relevant fields of information technology, it becomes feasible to automate the process and to save some of the effective amount of labor that is put into detecting credit card fraudulent activities.
+
+**IDENTIFYING FRAUDULENT DETECTION TECHNIQUES:**
+
+Given the class imbalance ratio, we recommend measuring the accuracy using the Area Under the Precision-Recall Curve (AUPRC). Confusion matrix accuracy is not meaningful for unbalanced classification.
+
+**MODEL PREDICTION**
+
+Now it is time to start building the model .The types of algorithms we are going to use to try to do anomaly detection on this dataset are as follow:
+
+**ISOLATION FOREST ALGORITHM :**
+
+One of the newest techniques to detect anomalies is called Isolation Forests. The algorithm is based on the fact that anomalies are data points that are few and different. As a result of these properties, anomalies are susceptible to a mechanism called isolation.
+Typical machine learning methods tend to work better when the patterns they try to learn are balanced, meaning the same amount of good and bad behaviors are present in the dataset.
+How Isolation Forests Work The Isolation Forest algorithm isolates observations by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature. The logic argument goes: isolating anomaly observations is easier because only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations require more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation.
+The way that the algorithm constructs the separation is by first creating isolation trees, or random decision trees. Then, the score is calculated as the path length to isolate the observation.
+
+**LOCAL OUTLIER FACTOR (LOF) ALGORITHM**
+
+The LOF algorithm is an unsupervised outlier detection method which computes the local density deviation of a given data point with respect to its neighbors. It considers as outlier samples that have a substantially lower density than their neighbors.
+The number of neighbors considered, (parameter n_neighbors) is typically chosen 1) greater than the minimum number of objects a cluster has to contain, so that other objects can be local outliers relative to this cluster, and 2) smaller than the maximum number of close by objects that can potentially be local outliers. In practice, such informations are generally not available, and taking n_neighbors=20 appears to work well in general.
+
+**RESULT**
+
+•	Isolation Forest detected 73 errors versus Local Outlier Factor detecting 97 errors vs. SVM detecting 8516 errors
+•	Isolation Forest has a 99.74% more accurate than LOF of 99.65% and SVM of 70.09
+•	When comparing error precision & recall for 3 models , the Isolation Forest performed much better than the LOF as we can see that the detection of fraud cases is around 27 % versus LOF detection rate of just 2 % and SVM of 0%.
+•	So overall Isolation Forest Method performed much better in determining the fraud cases which is around 30%.
+•	We can also improve on this accuracy by increasing the sample size or use deep learning algorithms however at the cost of computational expense.We can also use complex anomaly detection models to get better accuracy in determining more fraudulent cases
+
+**CONCLUSION**
+At present credit card fraud detection is one of the major issues in current transaction that are made online. Fraud can be committed in different ways and in many industries. The majority of detection methods combine a variety of fraud detection datasets to form a connected overview of both valid and non-valid payment data to make a decision. This decision must consider IP address, geolocation, device identification, “BIN” data, global latitude/longitude, historic transaction patterns, and the actual transaction information. In practice, this means that merchants and issuers deploy analytically based responses that use internal and external data to apply a set of business rules or analytical algorithms to detect fraud.
+
+To avoid such situation, it is mandatory to design a classifier that can classify which transaction are fraud and which are real ones. We are going to divide the dataset into training and testing phase for implementing further processes. We have used K-means algorithm which is an unsupervised in nature for clustering. We need a dataset which have both the entries fraudulent and genuine as we require this for training phase. Thus, by K-Means clustering and machine learning algorithms (Isolation forest and local outlier factor) which can be best adapt to the change in scenario taking place can be used and developed on a very large scale to detect the fraudulent transactions and used to ensure the credibility of payment system.
+
+
