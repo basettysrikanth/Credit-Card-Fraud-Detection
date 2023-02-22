@@ -20,4 +20,3 @@ In the current state of the nation, by using revolutionary services such as cred
 
 In this proposed project we designed a protocol or a model to detect the fraud activity in credit card transactions. This system is capable of providing most of the essential features required to detect fraudulent and legitimate transactions.
 As technology changes, it becomes difficult to track the behaviour and pattern of fraudulent transactions. With the upsurge of artificial intelligence and other relevant fields of information technology, it becomes feasible to automate the process and to save some of the effective amount of labor that is put into detecting credit card fraudulent activities.
-
